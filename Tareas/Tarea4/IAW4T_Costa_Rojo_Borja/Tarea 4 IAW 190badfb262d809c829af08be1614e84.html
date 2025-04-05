@@ -1,0 +1,746 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Tarea 4 IAW</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="190badfb-262d-809c-829a-f08be1614e84" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">👷🏽‍♂️</span></div><h1 class="page-title">Tarea 4 IAW</h1><p class="page-description"></p></header><div class="page-body"><nav id="190badfb-262d-80e3-8a82-d9a4216cc387" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#190badfb-262d-8066-8bf8-f74b807d91c2">Apartado 1: Instalación do sistema de almacenamento de arquivos en máquina virtual</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#190badfb-262d-8075-bec2-ed41b2f05c3a">1. Instalación e actualización do sistema de almacenamento.</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#190badfb-262d-8047-b03a-d7691d816149">Apartado 2: Configuración do sistema de almacenamento de arquivos</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#190badfb-262d-80a6-9513-e023c5c3c513">1. Configura o perfil de administrador.</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#190badfb-262d-806a-b73d-cbfcee634ccb">2. Crea varios usuarios e dous grupos. Fai que cada grupo polo menos teña dous usuarios.</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#190badfb-262d-80ea-bd5f-e067c4aed185">3. Sube e comparte varios arquivos entre varios usuarios.</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#190badfb-262d-80e9-87a9-eb59065cb2bf">4. Sube e comparte varias imaxes entre varios usuarios.</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#190badfb-262d-8042-af2f-ce280d5e527e">5. Sube e comparte varias imaxes entre os dous grupos.</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#190badfb-262d-80db-a69d-e21486aef6d1">6. Crea e/ou cambia o tema por defecto.</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#190badfb-262d-8097-8b09-f663cc85915c">Apartado 3: Instalación dun cliente de escritorio</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#190badfb-262d-802d-a8d9-fc9dd4609210">1. Instala e configura un cliente de escritorio para o servizo creado e configurado nos dous apartados anteriores.</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#190badfb-262d-803e-9929-c9351917a3d9">2. Crea e elimina arquivos no servidor e comproba que se actualiza a carpeta local.</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#190badfb-262d-808d-bf53-f295f343885c">3. Crea e elimina arquivos na carpeta local e comproba que se actualiza dito contido no servidor.</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#190badfb-262d-80f1-b72e-c6dd04e3323b">4. Sube e comparte arquivos de son e vídeos.</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#190badfb-262d-8016-b022-dbf997d473ea">5. Activa, desde o propio servizo, algunha aplicación de audio/vídeo para<br/>reproducir os arquivos compartidos no paso anterior.<br/></a></div></nav><h1 id="190badfb-262d-8066-8bf8-f74b807d91c2" class="">Apartado 1: Instalación do sistema de almacenamento de arquivos en máquina virtual</h1><h3 id="190badfb-262d-8075-bec2-ed41b2f05c3a" class="">1. Instalación e actualización do sistema de almacenamento.</h3><p id="191badfb-262d-8057-9e97-cba0e810222f" class="">Lo primero que haremos será actualizar el sistema, abrimos la terminal y ejecutamos:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191badfb-262d-80b8-941d-cbfdfea0cda8" class="code"><code class="language-Bash">sudo apt update &amp;&amp; sudo apt upgrade -y</code></pre><p id="191badfb-262d-806d-9425-e554e0cb49fd" class="">Luego, tendremos que instalar Apache, Php y MariaDB con:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191badfb-262d-8011-be3b-d5e74fe481d4" class="code"><code class="language-Bash">sudo apt install apache2 mariadb-server libapache2-mod-php php php-mysql php-gd php-json php-curl php-mbstring php-intl php-xml php-zip php-bz2 php-bcmath php-gmp php-imagick unzip -y
+</code></pre><p id="191badfb-262d-807b-b729-de4ad1db7878" class="">Ahora tendremos que configurar MariaDB:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191badfb-262d-806a-8dc2-c9b3e85939a0" class="code"><code class="language-Bash">sudo mysql_secure_installation</code></pre><p id="191badfb-262d-8035-add6-de2738ef894c" class="">Y seleccionaremos:</p><ul id="191badfb-262d-80ac-a182-c51a4abe2589" class="bulleted-list"><li style="list-style-type:disc">Cambiar la contraseña de root: <strong>Sí</strong> (elige una contraseña segura).</li></ul><ul id="191badfb-262d-8048-9749-def87e86fc71" class="bulleted-list"><li style="list-style-type:disc">Eliminar usuarios anónimos: <strong>Sí</strong></li></ul><ul id="191badfb-262d-805d-a4e8-ec2bdc51a735" class="bulleted-list"><li style="list-style-type:disc">Deshabilitar el acceso root remoto: <strong>Sí</strong></li></ul><ul id="191badfb-262d-8018-8854-e63d0753fa48" class="bulleted-list"><li style="list-style-type:disc">Eliminar la base de datos de prueba: <strong>Sí</strong></li></ul><ul id="191badfb-262d-80c0-abd0-c3b99696a01e" class="bulleted-list"><li style="list-style-type:disc">Recargar privilegios: <strong>Sí</strong><figure id="191badfb-262d-8020-be6d-de04bf0f8214" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.47.07.png"><img style="width:681.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.47.07.png"/></a></figure></li></ul><p id="191badfb-262d-8028-ac70-c090a89ec3cd" class="">
+</p><p id="191badfb-262d-805d-a7f8-d013b522a263" class="">Ahora accedemos a MariaDB y creamos la base de datos y el usuario</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191badfb-262d-806a-8610-e89e26db003d" class="code"><code class="language-Bash">sudo mysql -u root -p</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191badfb-262d-80bd-8685-e0ef3a750f42" class="code"><code class="language-Bash">CREATE DATABASE nextcloud;
+CREATE USER &#x27;nextcloudadmin&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;Abcd1234.&#x27;;
+GRANT ALL PRIVILEGES ON nextcloud.* TO &#x27;nextcloudadmin&#x27;@&#x27;localhost&#x27;;
+FLUSH PRIVILEGES;
+EXIT;</code></pre><p id="191badfb-262d-80aa-a608-c618b91e5eaa" class="">
+</p><p id="191badfb-262d-80f4-8a46-e65f266d08de" class="">Ahora descargaremos Nextcloud con:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191badfb-262d-80c3-ae86-d7b350dde05c" class="code"><code class="language-Bash">wget https://download.nextcloud.com/server/releases/latest.zip</code></pre><p id="191badfb-262d-800f-8eb0-f93ae43ac9dd" class="">Descomprimimos la carpeta y la movemos al directorio correcto:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191badfb-262d-80b5-a56f-ee5159777fc7" class="code"><code class="language-Bash">unzip latest.zip
+sudo mv nextcloud /var/www/html/</code></pre><p id="191badfb-262d-8068-890f-ff61c614b2f4" class="">Otorgamos permisos:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191badfb-262d-8087-8421-f924d51636ba" class="code"><code class="language-Bash">sudo chown -R www-data:www-data /var/www/html/nextcloud
+sudo chmod -R 755 /var/www/html/nextcloud</code></pre><p id="191badfb-262d-8053-b67a-fbb8036ef9c5" class="">
+</p><p id="191badfb-262d-80b7-a47b-ebd9de010d7f" class="">Ahora tendremos que configurar Apache para Nextcloud, para ello creamos el archivo de configuración y lo editamos:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191badfb-262d-8031-b615-e19be017a76d" class="code"><code class="language-Bash">sudo nano /etc/apache2/sites-available/nextcloud.conf</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191badfb-262d-803c-91c5-e686cef8bcfc" class="code"><code class="language-Bash">&lt;VirtualHost *:80&gt;
+    DocumentRoot &quot;/var/www/html/nextcloud&quot;
+    ServerName tu_dominio_o_IP
+
+    &lt;Directory &quot;/var/www/html/nextcloud&quot;&gt;
+        Require all granted
+        AllowOverride All
+        Options FollowSymLinks MultiViews
+    &lt;/Directory&gt;
+
+    ErrorLog ${APACHE_LOG_DIR}/nextcloud_error.log
+    CustomLog ${APACHE_LOG_DIR}/nextcloud_access.log combined
+&lt;/VirtualHost&gt;</code></pre><figure id="191badfb-262d-80f6-9d5e-fcf154f6f8c3" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_20.38.44.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_20.38.44.png"/></a></figure><p id="191badfb-262d-806a-ae43-c74f1c434b9c" class="">
+</p><p id="191badfb-262d-8070-8b18-d58cf51d6cc2" class="">Ahora habilitamos el sitio y los módulos necesarios.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191badfb-262d-809e-93a9-ed2326686a40" class="code"><code class="language-Bash">sudo a2ensite nextcloud.conf
+sudo a2enmod rewrite headers env dir mime
+sudo systemctl restart apache2</code></pre><p id="191badfb-262d-80f7-9cb2-ce929e073c05" class="">Y con esto deberíamos tener todo listo para comenzar a usar Nextcloud. Para comprobarlo, accedemos mediante el navegador a http:// + IP del servidor + nextcloud.</p><figure id="191badfb-262d-8099-a935-fd19533e55ab" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.54.52.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.54.52.png"/></a></figure><p id="191badfb-262d-80d4-9ef1-d960acb086a6" class="">
+</p><h1 id="190badfb-262d-8047-b03a-d7691d816149" class="">Apartado 2: Configuración do sistema de almacenamento de arquivos</h1><h3 id="190badfb-262d-80a6-9513-e023c5c3c513" class="">1. Configura o perfil de administrador.</h3><p id="191badfb-262d-80dc-ba38-e61c906595cd" class="">Una vez tenemos instalado nextcloud, abrimos el navegador y accedemos mediante:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191badfb-262d-8021-984e-d49b0c12d150" class="code"><code class="language-Bash">http://10.0.2.15/nextcloud</code></pre><p id="191badfb-262d-8068-933a-f46ae07627a4" class="">En nuestro caso 10.0.2.15 es nuestra dirección IP.</p><p id="191badfb-262d-806e-861a-e46415d5dfe6" class="">Aquí configuramos nuestra cuenta de administrador:</p><ul id="191badfb-262d-8079-be9e-d1a726355c45" class="bulleted-list"><li style="list-style-type:disc">Usuario: <code>nextclouduser</code></li></ul><ul id="191badfb-262d-80eb-b60d-c743c40f7f3d" class="bulleted-list"><li style="list-style-type:disc">Contraseña: <code>Fornelos1! </code></li></ul><ul id="191badfb-262d-80c0-9fbe-cf188f4eaf59" class="bulleted-list"><li style="list-style-type:disc">Base de datos: <code>nextcloud</code></li></ul><p id="191badfb-262d-8063-b78b-fdcae56f4a36" class="">
+</p><figure id="191badfb-262d-807d-a9da-c73cc972acc2" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_20.43.39.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_20.43.39.png"/></a></figure><p id="191badfb-262d-8006-9314-e1c3ffef6b5e" class="">
+</p><h3 id="190badfb-262d-806a-b73d-cbfcee634ccb" class="">2. Crea varios usuarios e dous grupos. Fai que cada grupo polo menos teña dous usuarios.</h3><p id="191badfb-262d-8004-9036-c7c0e5cbe178" class="">Para crear grupos y usuarios, accederemos a “Cuentas” en el menu de la esquina superior derecha. Una vez dentro, en el margen izquiero tendremos los grupos y el símbolo “+” para añadir grupos nuevos.</p><figure id="191badfb-262d-8071-b7b2-f11575c33ce8" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_20.49.09.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_20.49.09.png"/></a></figure><p id="191badfb-262d-80ec-9744-db519195c874" class="">
+</p><p id="191badfb-262d-8060-b006-de4c15f099ac" class="">En la barra lateral también tenemos “Nueva Cuenta” para crear usuarios. En este caso y siguiendo las instrucciones del ejercicio, hemos creado dos grupos y luego dos usuarios en cada grupo.</p><figure id="191badfb-262d-8092-835b-fc06f9ee9160" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_20.54.26.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_20.54.26.png"/></a></figure><p id="191badfb-262d-8086-9361-f13583aa45cb" class="">
+</p><p id="191badfb-262d-8047-9e0a-da34b353f79a" class="">El resultado final es el siguiente:</p><figure id="191badfb-262d-8031-96fc-cf2a846ae007" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_20.57.11.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_20.57.11.png"/></a></figure><p id="191badfb-262d-8096-90d6-ddde69291fe3" class="">
+</p><h3 id="190badfb-262d-80ea-bd5f-e067c4aed185" class="">3. Sube e comparte varios arquivos entre varios usuarios.</h3><p id="191badfb-262d-80a8-a463-ed27990f7103" class="">Entramos con un usuario creado, por ejemplo con “Usuario1”.</p><figure id="191badfb-262d-80a6-bbd1-c64de11036ee" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_21.58.24.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_21.58.24.png"/></a></figure><p id="191badfb-262d-8020-b5f6-efa32efcd87e" class="">
+</p><p id="191badfb-262d-80c7-b3c7-da24c6e0a1ad" class="">En la parte superior izquierda, clicamos en la opción “Files”. Ahora en la parte superior vamos a clicar en “New” y vamos a crear una nueva carpeta, en nuestro caso le daremos el nombre de “Practicas IAW” para compartir practicas de la asignatura con otros usuarios.</p><figure id="191badfb-262d-802e-ac40-d9d64c4f918b" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_22.01.26.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_22.01.26.png"/></a></figure><p id="191badfb-262d-80e5-af52-faac32289688" class="">
+</p><p id="191badfb-262d-8074-8f6a-d7d96b8cb25b" class="">Ahora que tenemos la carpeta creada, vamos a subir archivos para compartirlos.</p><figure id="191badfb-262d-806e-b0d7-fcc8e2507432" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_22.03.34.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_22.03.34.png"/></a></figure><p id="191badfb-262d-8025-9509-dafbe42d44fd" class="">
+</p><figure id="191badfb-262d-804a-9305-f30decae13d2" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_22.16.05.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_22.16.05.png"/></a></figure><p id="191badfb-262d-80b4-851f-fb72bb0b97d9" class="">
+</p><figure id="191badfb-262d-8062-aee2-f37d8e076f49" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_22.17.23.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_22.17.23.png"/></a></figure><p id="191badfb-262d-80a8-80f3-ca9bf5b64cd7" class="">
+</p><p id="191badfb-262d-8016-9742-cfd0e27a2818" class="">Una vez tenemos los archivos subidos, nos vamos a la carpeta y presionamos en el icono de la persona con el símbolo “+” y añadimos a los usuarios con los que queremos compartir el archivo.</p><figure id="191badfb-262d-80c5-ac9e-fa0e38d6e1ec" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.26.15.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.26.15.png"/></a></figure><p id="191badfb-262d-80e6-8fb6-ec78b688e79e" class="">
+</p><p id="191badfb-262d-80ee-afd8-d2a89e6ed02c" class="">Tenemos opciones de solo lectura, edicion, compartir… marcamos los que queramos darle al usuario.</p><figure id="191badfb-262d-8066-93a4-fa457e8b56c4" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.28.42.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.28.42.png"/></a></figure><p id="191badfb-262d-80e8-a988-d37c8604b56a" class="">
+</p><h3 id="190badfb-262d-80e9-87a9-eb59065cb2bf" class="">4. Sube e comparte varias imaxes entre varios usuarios.</h3><p id="191badfb-262d-8093-87ed-e0b488a208f3" class="">Para compartir varias imagenes con varios usuarios, podemos subir las imágenes directamente en “Archivos”.</p><figure id="191badfb-262d-803f-9739-c061ca2fb7e3" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.31.27.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.31.27.png"/></a></figure><p id="192badfb-262d-803e-8ee5-e7d4d3195466" class="">
+</p><p id="191badfb-262d-8009-bfa2-d779020c3579" class="">O también podemos usar la opción de “Archivos multimedia”. Para ello, pulsamos en el icono superior izquierdo de “Photos”. Se nos abrirá un apartado con todos nuestros archivos de audio, video y foto. Seleccionamos “Photos” y creamos un album.</p><figure id="192badfb-262d-80d0-b3ae-fa5272df43ab" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_1.44.39.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_1.44.39.png"/></a></figure><p id="192badfb-262d-809d-a66d-cdc5a90ecaed" class="">
+</p><p id="192badfb-262d-8088-abbf-ca5813a6c547" class="">Ahora ya solo nos queda subir las imágenes.</p><figure id="192badfb-262d-8043-b508-e151588ae59e" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_1.46.58.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_1.46.58.png"/></a></figure><p id="192badfb-262d-80fe-9f86-cdc7d5b7321a" class="">
+</p><p id="191badfb-262d-802f-9502-d18cb27ca2b9" class="">Una vez subidas, seleccionamos el icono superior derecho de compartir, ahora seleccionaremos los usuarios para compartir dichas fotos. Debemos tener en cuenta que compartiremos el albúm entero, no da opción a compartir fotos sueltas. Sin embargo, si las subimos como archivos a carpetas si que nos deja compartir un archivo o foto sola.</p><figure id="192badfb-262d-8082-bd29-e89dae41af6b" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_1.47.51.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_1.47.51.png"/></a></figure><p id="192badfb-262d-80e9-8381-df9b71f6b27c" class="">
+</p><blockquote id="191badfb-262d-802c-8cf2-c440c9612673" class=""><mark class="highlight-orange"><mark class="highlight-yellow_background">Nos hemos dado cuenta de que hemos cometido un error cuando hemos añadido imágenes desde archivos y para compartir hemos usado el icono superior de la persona con el símbolo +, de esa manera se comparte la carpeta entera y no los archivos seleccionados. Para compartir archivos concretos dentro de una carpeta debemos ir uno a uno compartiendo o bien crear una carpeta con los archivos a compartir y compartir dicha carpeta.</mark></mark></blockquote><h3 id="190badfb-262d-8042-af2f-ce280d5e527e" class="">5. Sube e comparte varias imaxes entre os dous grupos.</h3><p id="191badfb-262d-8003-9736-c0ae292fe458" class="">Repetimos el proceso pero esta vez, esta vez lo vamos a hacer subiendo las imagenes como archivos normales para comprobar que podemos compartir, dentro de una carpeta, un archivo de imagen independiente a la carpeta. Añadiremos grupos en vez de usuarios. En este caso hemos compartido las imágenes con permisos de solo lectura.</p><figure id="191badfb-262d-80ac-8de2-de82d1d0e7f3" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.34.46.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.34.46.png"/></a></figure><p id="191badfb-262d-804a-8592-c54f43445eba" class="">
+</p><h3 id="190badfb-262d-80db-a69d-e21486aef6d1" class="">6. Crea e/ou cambia o tema por defecto.</h3><p id="191badfb-262d-8065-b4db-e2d542347c7c" class="">Para cambiar el tema iremos al icono superior derecha de usuario y luego a “Appearence and accessibility”. Ahí cambiaremos el tema, en este caso lo cambiamos a tema oscuro. Podemos cambiar también los fondos y otras características. </p><figure id="191badfb-262d-800a-95f0-e9d7eac26816" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.37.15.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.37.15.png"/></a></figure><p id="191badfb-262d-80aa-a080-ec61abf84da2" class="">
+</p><figure id="191badfb-262d-80f2-ba6c-fb7d5b854652" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.37.28.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-05_a_las_23.37.28.png"/></a></figure><blockquote id="192badfb-262d-80ba-a3d6-dd9362eeaf51" class=""><mark class="highlight-orange"><mark class="highlight-yellow_background">Si vamos a “Aplicaciones”, como se muestra en el último ejercicio del apartado 3, podemos instalar algunas aplicaciones para personalizar aún más el tema o aspecto de nextcloud.</mark></mark></blockquote><h1 id="190badfb-262d-8097-8b09-f663cc85915c" class="">Apartado 3: Instalación dun cliente de escritorio</h1><p id="191badfb-262d-8079-9661-f86f801ebe0e" class="">El cliente de escritorio de NextCloud sincroniza automáticamente los archivos entre tu PC y el servidor.</p><h3 id="190badfb-262d-802d-a8d9-fc9dd4609210" class="">1. Instala e configura un cliente de escritorio para o servizo creado e configurado nos dous apartados anteriores.</h3><p id="191badfb-262d-80c5-9da8-f9b20960430f" class="">Tenemos dos opciones, descargarlo mediante la terminal o bien descargarlo de la propia web. Nosotros hemos escogido hacerlo desde la terminal:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="191badfb-262d-8053-8e07-d6a47e6eba68" class="code"><code class="language-Bash">sudo apt update
+sudo apt install nextcloud-desktop</code></pre><figure id="191badfb-262d-8066-9006-e6aefdb761f7" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.05.45.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.05.45.png"/></a></figure><p id="191badfb-262d-80f5-9d23-cdbf7bc6165d" class="">
+</p><p id="191badfb-262d-80d8-bfd9-d7212cbfff52" class="">Al finalizar, accedemos al menú aplicaciones de Ubuntu y comprobamos que ya tenemos el icono del cliente instalado, lo abrimos.</p><figure id="191badfb-262d-80f4-a3cd-f0ae4ff19dd4" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.07.18.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.07.18.png"/></a></figure><p id="191badfb-262d-807d-a9b6-c1eddf991aa6" class="">Presionamos entrar e introducimos la direccion del servidor, en este caso http://10.0.2.15/nextcloud. Se nos pedirá que confirmemos desde el navegador con usuario y contraseña.</p><figure id="191badfb-262d-801f-bbbe-ead1eea25155" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.08.23.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.08.23.png"/></a></figure><p id="191badfb-262d-80f9-b220-d0a5360592fb" class="">
+</p><figure id="191badfb-262d-80ed-8bff-d9aef0555d50" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.11.24.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.11.24.png"/></a></figure><p id="191badfb-262d-80a7-aabb-f05de2a118fd" class="">
+</p><p id="191badfb-262d-80b5-ae10-c9366493e874" class="">Ahora configuraremos el cliente seleccionando la carpeta donde se guardarán los archivos y lo que queremos sincronizar. Una vez configurado, presionamos en conectar.</p><figure id="191badfb-262d-8059-a489-cba969ec61c3" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.12.45.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.12.45.png"/></a></figure><p id="191badfb-262d-80f3-8dea-d9f59392e906" class="">
+</p><p id="191badfb-262d-8015-9470-e0b06d1d5b87" class="">Lo primero que hará el software, será sincronizar la carpeta de nuestro sistema con la carpeta en la nube.</p><figure id="191badfb-262d-8012-8c88-f4f6a3d7b65b" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.14.01.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.14.01.png"/></a></figure><p id="191badfb-262d-80e2-a155-fa65fe132f96" class="">
+</p><p id="191badfb-262d-80e5-bf60-f2d86b43e72b" class="">Ahora si accedemos a la carpeta de nuestra máquina, podemos ver que están todos los archivos guardados en nuestro cliente de nextcloud.</p><figure id="191badfb-262d-80f9-b06b-ff04e7427d74" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.15.01.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.15.01.png"/></a></figure><p id="191badfb-262d-80f0-87de-dc55bd68b9f4" class="">
+</p><h3 id="190badfb-262d-803e-9929-c9351917a3d9" class="">2. Crea e elimina arquivos no servidor e comproba que se actualiza a carpeta local.</h3><p id="191badfb-262d-805c-bab4-dd4b81bbae39" class="">Vamos al servidor, nos identificamos con nuestro usuario y vamos a borrar varias carpetas.</p><figure id="191badfb-262d-802e-a2a5-dfd97f1de67d" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.18.54.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.18.54.png"/></a></figure><p id="191badfb-262d-80a5-b4da-f01975d8fd68" class="">
+</p><p id="191badfb-262d-80cd-942d-e95a59086be0" class="">Ahora vamos a ver si se han eliminado también de nuestra carpeta local y vemos que las carpetas también han sido borradas.</p><figure id="191badfb-262d-802a-81a9-febcfe9053eb" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.20.26.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.20.26.png"/></a></figure><p id="191badfb-262d-80d5-8cc8-eb36989cf53f" class="">
+</p><h3 id="190badfb-262d-808d-bf53-f295f343885c" class="">3. Crea e elimina arquivos na carpeta local e comproba que se actualiza dito contido no servidor.</h3><p id="191badfb-262d-8010-a07f-f8946020850f" class="">
+</p><figure id="191badfb-262d-801b-8793-e9fe64534172" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.24.47.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.24.47.png"/></a></figure><p id="191badfb-262d-805a-97c8-ce2b8cb57139" class="">
+</p><p id="191badfb-262d-8017-bef5-ccadc46211e2" class="">Efectivamente, en apenas unos segundos ya aparecen los archivos en el servidor.</p><figure id="191badfb-262d-80dc-b2bc-f52ed0d838c7" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.25.23.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.25.23.png"/></a></figure><p id="191badfb-262d-800f-9f0b-e98aced1f007" class="">
+</p><h3 id="190badfb-262d-80f1-b72e-c6dd04e3323b" class="">4. Sube e comparte arquivos de son e vídeos.</h3><p id="191badfb-262d-8027-a3b9-f412558a76fc" class="">Hemos creado una carpeta con el nombre Audio_Video para subir dentro de ella archivos de audio y video, ahora presionamos en “new” y “upload files”.</p><figure id="191badfb-262d-8033-9dee-d83eac1f1dc2" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.29.21.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.29.21.png"/></a></figure><p id="191badfb-262d-8024-a07e-febfa837d704" class="">
+</p><figure id="191badfb-262d-80e5-bc65-dafe339dcd15" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.34.27.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.34.27.png"/></a></figure><p id="191badfb-262d-8044-91a3-c2544fbdd9ef" class="">
+</p><figure id="191badfb-262d-8040-b715-d7e2ba2f7ef8" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.35.07.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.35.07.png"/></a></figure><p id="191badfb-262d-8063-a946-c1e0edb39a7f" class="">
+</p><p id="191badfb-262d-803b-bae4-efce585f82c8" class="">Ahora vamos a compartir los audios con el usuario 2 y los videos con los usuarios 3 y 4.</p><figure id="191badfb-262d-80b2-9224-e994498dd706" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.43.54.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.43.54.png"/></a></figure><p id="191badfb-262d-80c4-8ce9-d0c1951c84b2" class="">
+</p><figure id="191badfb-262d-8057-b374-f836137a5b82" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.45.30.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.45.30.png"/></a></figure><blockquote id="191badfb-262d-8085-98cf-dcea9d4dc510" class=""><mark class="highlight-orange"><mark class="highlight-yellow_background">Recordemos que debemos ir archivo a archivo.</mark></mark></blockquote><figure id="191badfb-262d-80af-8bb4-ded71ee65c7c" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.47.53.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_0.47.53.png"/></a></figure><blockquote id="191badfb-262d-809a-9f2a-d2118c9f88e1" class=""><mark class="highlight-orange"><mark class="highlight-yellow_background">Podemos ver los archivos que estamos compartiendo con otros usuarios desde “Shares→Shared with others”</mark></mark></blockquote><h3 id="190badfb-262d-8016-b022-dbf997d473ea" class="">5. Activa, desde o propio servizo, algunha aplicación de audio/vídeo para<br/>reproducir os arquivos compartidos no paso anterior.<br/></h3><p id="190badfb-262d-80d0-a6d0-ec76f196cf96" class="">Aunque las últimas versiones de NextCloud ya traen preinstalado tanto reproductor de audio como de video, hemos accedido con la cuenta de administrador (muy importante ya que es el único usuario que puede instalar app en el servidor Nextcloud) y hemos accedido mediante el icono de usuario de la esquina superior derecha a “Aplicaciones”, ahí hemos seleccionado “Multimedia” de la barra lateral y hemos encontrado el “Audio Player” que es un reproductor que además permite organizar en albums los archivos de audio. </p><figure id="192badfb-262d-8045-a450-c5af66b63b10" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_1.16.51.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_1.16.51.png"/></a></figure><p id="192badfb-262d-8066-a7ae-cfe1d2506fa0" class="">
+</p><figure id="192badfb-262d-805f-bd71-c1e8420ee20f" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_1.24.46.png"><img style="width:709.984375px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_1.24.46.png"/></a></figure><blockquote id="192badfb-262d-8003-add0-eab202d35236" class=""><mark class="highlight-orange"><mark class="highlight-yellow_background">En el de algunao app que reproduzca video, no hemos encontrado ninguna, salvo algunos conversores de formato, suponemos que es porque en las últimas versiones de nextcloud ya viene con reproductor tanto de video como de audio incorporado.</mark></mark></blockquote><figure id="192badfb-262d-80de-9305-fcb656eadf56" class="image"><a href="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_1.58.04.png"><img style="width:709.9921875px" src="Tarea%204%20IAW%20190badfb262d809c829af08be1614e84/Captura_de_pantalla_2025-02-06_a_las_1.58.04.png"/></a></figure><p id="192badfb-262d-801c-bbd3-daced9508f4e" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

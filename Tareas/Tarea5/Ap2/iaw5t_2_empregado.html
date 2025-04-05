@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Empregado</title>
+</head>
+<body>
+    <h2>Formulario de Empregado</h2>
+    <form action="iaw5t_2_datos.php" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" required><br>
+
+        <label for="apelidos">Apelidos:</label>
+        <input type="text" name="apelidos" required><br>
+
+        <label for="data_alta">Data de Alta (dd/mm/aaaa):</label>
+        <input type="text" name="data_alta" pattern="\d{2}/\d{2}/\d{4}" required><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
