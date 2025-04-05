@@ -1,5 +1,8 @@
 <?php
-// Apelidos, Nome, ASIR, IAW
+// Apelidos: Costa Rojo
+// Nome: Borja
+// Ciclo: ASIR
+// Módulo: IAW
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = htmlspecialchars($_POST["nome"]);

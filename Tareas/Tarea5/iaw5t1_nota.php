@@ -1,4 +1,9 @@
 <?php
+// Apelidos: Costa Rojo
+// Nome: Borja
+// Ciclo: ASIR
+// Módulo: IAW
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Almacenar las notas en arrays asociativos
     $tarefas = [
